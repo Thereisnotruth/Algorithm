@@ -21,7 +21,7 @@ public class Main {
                     arr[6]++;
                 }
             } else {
-                arr[Integer.parseInt(String.valueOf(N.charAt(i)))]++;
+                arr[N.charAt(i) - '0']++;
             }
         }
 
