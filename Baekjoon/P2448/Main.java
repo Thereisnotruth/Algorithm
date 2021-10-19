@@ -1,42 +1,41 @@
 package P2448;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
-	
+    static int N, M;
+    static char[][] star;
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int n = sc.nextInt();
-		sc.close();
-		
-		String map[] = new String[n];
-		map[0] = "  *  ";
-		map[1] = " * * ";
-		map[2] = "*****";
-		
-		for (int k = 1; 3 * (int)Math.pow(2, k) <= n; ++k) {
-			makeBigStar(k, map);
-		}
-		
-		for (int i = 0; i < n; ++i) {
-			System.out.println(map[i]);
-		}
+        StringBuilder sb = new StringBuilder();
+
+        N = sc.nextInt();
+
+        star = new char[N][2 * N - 1];
+        for (int i = 0; i < N; i++) {
+            Arrays.fill(star[i], ' ');
+        }
+
+        Star(0, N - 1, N);
+
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < 2 * N - 1; j++) {
+                sb.append(star[i][j]);
+            }
+            sb.append("\n");
+        }
+        System.out.print(sb);
 	}
-	
-	private static void makeBigStar(int k, String map[]) {
-		int bottom = 3 * (int)Math.pow(2, k);
-		int middle = bottom / 2;
-		
-		for (int i = middle; i < bottom; ++i) {
-			map[i] = map[i - middle] + " " + map[i -middle];
-		}
-		
-		String space = "";
-		while (space.length() < middle) {
-			space += " ";
-		}
-		for (int i = 0; i < middle; ++i) {
-			map[i] = space + map[i] + space;
-		}
-	}
+    static void Star (int y, int x, int size) {
+        if (size == 3) {
+            star[y][x] = '*';
+            star[y + 1][x - 1] = star[y + 1][x + 1] = '*';
+            star[y + 2][x - 2] = star [y + 2][x - 1] = star[y + 2][x] = star[y + 2][x + 1] = star[y + 2][x + 2] = '*';
+        } else {
+            int minSize = size / 2;
+            Star(y, x, minSize);
+            Star(y + minSize, x - minSize, minSize);
+            Star(y + minSize, x + minSize, minSize);
+        }
+    }
 }
