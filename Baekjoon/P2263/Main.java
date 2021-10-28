@@ -37,7 +37,8 @@ public class Main {
                 break;
             }
         }
-        DFS(inStart, rootIndex - 1, postStart, postStart + rootIndex - inStart - 1);
-        DFS(rootIndex + 1, inEnd, rootIndex + postStart - inStart, postEnd - 1);
+        int leftSize = rootIndex - inStart;
+        DFS(inStart, rootIndex - 1, postStart, postStart + leftSize - 1);
+        DFS(rootIndex + 1, inEnd, postStart + leftSize, postEnd - 1);
     }
 }
