@@ -1,12 +1,19 @@
 package Solve;
 
-import DFS.N으로표현.Solution;
+import 정렬.K번째수.*;
 
 public class Main {
   public static void main (String[] args) {
 
     Solution s = new Solution();
-    System.out.println(s.solution(5, 12));
+    int[] arrays = { 1, 5, 2, 6, 3, 7, 4 };
+    int[][] commands = {
+      { 2, 5, 3 }, { 4, 4, 1 }, { 1, 7, 3 }
+    };
+    int[] ans = s.solution(arrays, commands);
+    for (int i = 0; i < commands.length; i++) {
+      System.out.println(ans[i]);
+    }
   }
   
 }
