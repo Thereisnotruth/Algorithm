@@ -1,4 +1,4 @@
-package D1979;
+package P1979;
 
 import java.io.*;
 import java.util.*;

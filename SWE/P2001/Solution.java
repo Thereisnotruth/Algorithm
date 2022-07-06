@@ -1,4 +1,4 @@
-package D2001;
+package P2001;
 
 import java.util.*;
 import java.io.*;
