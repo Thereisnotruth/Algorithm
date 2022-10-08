@@ -1,9 +1,10 @@
-package DFS.N으로표현;
+package prob.N으로표현;
 
 import java.util.*;
 
 public class Solution {
   static int min = Integer.MAX_VALUE;
+
   public int solution(int N, int number) {
     dfs(0, N, number, 0);
     if (min == Integer.MAX_VALUE) {
@@ -11,6 +12,7 @@ public class Solution {
     }
     return min;
   }
+
   public void dfs(int depth, int N, int number, int cur) {
     if (depth > 8) {
       return;

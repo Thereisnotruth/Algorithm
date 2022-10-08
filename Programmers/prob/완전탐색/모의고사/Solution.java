@@ -1,4 +1,4 @@
-package 완전탐색.모의고사;
+package prob.완전탐색.모의고사;
 
 import java.util.*;
 

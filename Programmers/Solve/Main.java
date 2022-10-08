@@ -1,19 +1,17 @@
 package Solve;
 
-import 정렬.K번째수.*;
+import java.util.*;
+import dev.p1.*;
 
 public class Main {
-  public static void main (String[] args) {
-
-    Solution s = new Solution();
-    int[] arrays = { 1, 5, 2, 6, 3, 7, 4 };
-    int[][] commands = {
-      { 2, 5, 3 }, { 4, 4, 1 }, { 1, 7, 3 }
+  public static void main(String[] args) {
+    String[] registered_list = {
+        "cow", "cow1", "cow2", "cow3", "cow4", "cow5", "cow6", "cow7", "cow8", "cow9",
     };
-    int[] ans = s.solution(arrays, commands);
-    for (int i = 0; i < commands.length; i++) {
-      System.out.println(ans[i]);
-    }
+    String new_id = "cow";
+    Solution s = new Solution();
+    String answer = s.solution(registered_list, new_id);
+    System.out.println(answer);
   }
-  
+
 }
