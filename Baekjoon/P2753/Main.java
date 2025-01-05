@@ -5,15 +5,17 @@ import java.util.*;
 
 public class Main {
     static int N;
-    public static void main (String[] args) {
-        Scanner sc = new Scanner(System.in);
 
-        N = sc.nextInt();
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        if(N % 4 == 0 && N % 100 != 0 || N % 400 == 0) {
-            System.out.println(1);
-        } else {
-            System.out.println(0);
-        }
+        int year = Integer.parseInt(br.readLine());
+
+        bw.write(((((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) ? 1 : 0) + "\n");
+
+        bw.flush();
+        br.close();
+        bw.close();
     }
 }
